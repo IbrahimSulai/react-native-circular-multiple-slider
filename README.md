@@ -11,10 +11,10 @@ React Native component for circular multiple slider and pie chart.
 It's an example with this package
 
 ![SliderWithCircleDivider](SliderWithCircleDivider.gif)
-![SliderWithSquareDivider](SliderWithSquareDivider.gif)
+![SliderWithSquareDivider](SliderWithSquareDivider.gif)\s\s
 
 ![SliderWithIconDivider](SliderWithIconDivider.gif)
-![SliderWithTextDividerComponent](SliderWithTextDividerComponent.gif)
+![SliderWithTextDividerComponent](SliderWithTextDividerComponent.gif)\s\s
 
 ![SliderWithoutDivider](SliderWithoutDivider.png)
 ![PieChartWithTextDividerComponent](PieChartWithTextDividerComponent.png)
