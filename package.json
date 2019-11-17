@@ -1,0 +1,50 @@
+{
+  "name": "react_native_circular_multiple_slider",
+  "version": "1.0.0",
+  "description": "React Native component for circular multiple slider and pie chart",
+  "main": "app/src/CircularMultipleSlider.js",
+  "homepage": "",
+  "keywords": [
+    "react",
+    "react-native",
+    "multiple-slider",
+    "slider",
+    "pie-chart",
+    "divider",
+    "divider-icon",
+    "svg",
+    "circular",
+    "circle",
+    "round",
+    "react-component"
+  ],
+  "author": {
+    "name": "Ibrahim Sulaiman",
+    "email": "ibrahim.kce@icloud.com"
+  },
+  "files": [
+    "app",
+    "README.md"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "lodash.range": "^3.2.0",
+    "react-native-svg": "9.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/runtime": "^7.7.2",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.6.0",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.57.0",
+    "react": "^16.11.0",
+    "react-native": "^0.61.4",
+    "react-test-renderer": "16.9.0"
+  }
+}
