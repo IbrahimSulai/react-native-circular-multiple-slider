@@ -13,7 +13,6 @@ It's an example with this package
 ![SliderWithCircleDivider](SliderWithCircleDivider.gif)
 ![SliderWithSquareDivider](SliderWithSquareDivider.gif)
 ![SliderWithIconDivider](SliderWithIconDivider.gif)
-![SliderWithBarDivider](SliderWithBarDivider.gif)
 ![SliderWithTextDividerComponent](SliderWithTextDividerComponent.gif)
 ![SliderWithoutDivider](SliderWithoutDivider.png)
 ![PieChartWithTextDividerComponent](PieChartWithTextDividerComponent.png)
@@ -203,7 +202,7 @@ slideDividerType is a type, which will decide the type of the slide divider.
 
 slideDividerIcon is the icon used for the slideDivider, if the slideDividerType is icon.
 | Type | Required | Platform |
-| ---------- | -------- | -------- |
+| ---- | -------- | -------- |
 | any | No | iOS, Android |
 
 ---
@@ -242,7 +241,7 @@ onPanResponderRelease is an prop method, used to handle the slider release callb
 
 borderColor is the color for the border.
 | Type | Required | Platform |
-| ---------- | -------- | -------- |
+| ---- | -------- | -------- |
 | string | No | iOS, Android |
 
 ---
