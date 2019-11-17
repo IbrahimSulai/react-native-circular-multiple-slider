@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React Native component for circular multiple slider and pie chart",
   "main": "app/src/CircularMultipleSlider.js",
-  "homepage": "",
+  "homepage": "https://github.com/IbrahimSulai/react-native-circular-multiple-slider.git",
   "keywords": [
     "react",
     "react-native",
@@ -29,7 +29,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/IbrahimSulai/react-native-circular-multiple-slider.git"
   },
   "dependencies": {
     "lodash.range": "^3.2.0",
