@@ -12,8 +12,10 @@ It's an example with this package
 
 ![SliderWithCircleDivider](SliderWithCircleDivider.gif)
 ![SliderWithSquareDivider](SliderWithSquareDivider.gif)
+
 ![SliderWithIconDivider](SliderWithIconDivider.gif)
 ![SliderWithTextDividerComponent](SliderWithTextDividerComponent.gif)
+
 ![SliderWithoutDivider](SliderWithoutDivider.png)
 ![PieChartWithTextDividerComponent](PieChartWithTextDividerComponent.png)
 ![PieChartWithIconDividerComponent](PieChartWithIconDividerComponent.png)
