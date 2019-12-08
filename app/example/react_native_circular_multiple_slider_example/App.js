@@ -369,14 +369,14 @@ export default class Sample extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* {this.renderSliderWithCircleDivider()} */}
+        {this.renderSliderWithCircleDivider()}
         {/* {this.renderSliderWithSquareDivider()} */}
         {/* {this.renderSliderWithBarDivider()} */}
         {/* {this.renderSliderWithIconDivider()} */}
         {/* {this.renderSliderWithTextDividerComponent()} */}
         {/* {this.renderSliderWithoutDivider()} */}
         {/* {this.renderPieChartWithTextDividerComponent()} */}
-        {this.renderPieChartWithIconDividerComponent()}
+        {/* {this.renderPieChartWithIconDividerComponent()} */}
         {this.renderTextContainer()}
       </View>
     );

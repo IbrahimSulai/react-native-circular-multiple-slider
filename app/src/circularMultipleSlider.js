@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-fallthrough */
 /* eslint-disable react-native/no-inline-styles */
-import React, {PureComponent} from 'react';
-import {PanResponder, View, Platform} from 'react-native';
+import React, { PureComponent } from 'react';
+import { PanResponder, View, Platform } from 'react-native';
 import Svg, {
   Circle,
   Rect,
@@ -205,8 +205,8 @@ export default class CircularMultipleSlider extends PureComponent {
     if (this.startPosition.length < this.state.angleLength.length) {
       return;
     }
-    const {dividerComponent} = this.props;
-    const {iconXPosition, iconYPosition} = this.getIconPosition(index);
+    const { dividerComponent } = this.props;
+    const { iconXPosition, iconYPosition } = this.getIconPosition(index);
     return (
       <View
         style={{
@@ -243,11 +243,11 @@ export default class CircularMultipleSlider extends PureComponent {
         multiplierX = 1;
         multiplierY = length >= Math.PI ? 0 : -1;
     }
-    return {multiplierX: multiplierX, multiplierY: multiplierY};
+    return { multiplierX: multiplierX, multiplierY: multiplierY };
   }
 
   getIconPosition(index) {
-    const {radius, dividerComponentSize} = this.props;
+    const { radius, dividerComponentSize } = this.props;
     //If it is PieChartComponentType then we will consider strokeWidth as 20(Default) otherwise we will set the user provided strokeWidth
     //Also consider the condition the strokeWidth is greater than radius
     const strokeWidth =
@@ -269,11 +269,11 @@ export default class CircularMultipleSlider extends PureComponent {
     const isHorizontalAxis =
       Math.abs(this.startPosition[index].fromX) +
         Math.abs(this.startPosition[updatedIndex].fromX) >=
-      Math.abs(this.startPosition[index].fromY) +
+        Math.abs(this.startPosition[index].fromY) +
         Math.abs(this.startPosition[updatedIndex].fromY)
         ? true
         : false;
-    const {multiplierX, multiplierY} = this.getMultiplier(
+    const { multiplierX, multiplierY } = this.getMultiplier(
       midPosition,
       length,
       isHorizontalAxis,
@@ -355,7 +355,7 @@ export default class CircularMultipleSlider extends PureComponent {
             : positionY) - padding;
       }
     }
-    return {iconXPosition: positionX, iconYPosition: positionY};
+    return { iconXPosition: positionX, iconYPosition: positionY };
   }
 
   renderSlideDivider(index) {
@@ -434,16 +434,10 @@ export default class CircularMultipleSlider extends PureComponent {
     let slider = [];
     this.state.startAngle.map((value, index) => {
       const {
-        dividerComponent,
         strokeWidth,
         radius,
         segments,
         colors,
-        separatorColor,
-        onUpdate,
-        onPanResponderGrant,
-        onPanResponderRelease,
-        hideSlideDividerType,
       } = this.props;
       const start = this.calculateCircularArc(
         0,
@@ -466,7 +460,7 @@ export default class CircularMultipleSlider extends PureComponent {
           pointerEvents={Platform.OS === 'ios' ? '' : 'box-none'}>
           <Defs>
             {range(segments).map(i => {
-              const {fromX, fromY, toX, toY} = this.calculateCircularArc(
+              const { fromX, fromY, toX, toY } = this.calculateCircularArc(
                 i,
                 segments,
                 radius,
@@ -496,7 +490,7 @@ export default class CircularMultipleSlider extends PureComponent {
                 radius}`,
             }}>
             {range(segments).map(i => {
-              const {fromX, fromY, toX, toY} = this.calculateCircularArc(
+              const { fromX, fromY, toX, toY } = this.calculateCircularArc(
                 i,
                 segments,
                 radius,
@@ -515,135 +509,153 @@ export default class CircularMultipleSlider extends PureComponent {
                   strokeWidth={strokeWidth}
                   stroke={`url(#${this.getGradientId(i)})`}
                   fill="transparent"
+                  zIndex={0}
+                  style={{ zIndex: 0 }}
                 />
               );
             })}
+          </G>
+        </Svg>,
+      );
+    });
+    return slider;
+  }
 
-            {/*
-              Progress Icon
-              dividerComponent will be render if the length of the dividerComponent is greater than 1 and less than or equal to 4
-              since our dividerComponent will render only angle is greater than or equal to PI/2
-              */}
-            {dividerComponent.length >= 1 &&
-              this.state.angleLength[index] >=
-                this.minimumAngleLengthToShowDividerComponent &&
-              this.renderDividerComponent(index)}
+  renderDivider() {
+    let divider = [];
+    this.state.startAngle.map((value, index) => {
+      const {
+        strokeWidth,
+        radius,
+        segments,
+        onUpdate,
+        onPanResponderGrant,
+        onPanResponderRelease,
+        hideSlideDividerType,
+      } = this.props;
+      const start = this.calculateCircularArc(
+        0,
+        segments,
+        radius,
+        value,
+        this.state.angleLength[index],
+      );
+      this.startPosition[index] = start;
 
-            {/* Start Icon */}
-            {this.state.startAngle.length > 1 && (
-              <G
-                fill={'transparent'}
-                transform={{translate: `${start.fromX}, ${start.fromY}`}}
-                {...PanResponder.create({
-                  onMoveShouldSetPanResponder: (evt, gestureState) => true,
-                  onMoveShouldSetPanResponderCapture: (evt, gestureState) =>
-                    true,
-                  onPanResponderGrant: (evt, gestureState) => {
-                    if (onPanResponderGrant) {
-                      onPanResponderGrant();
-                    }
-                    this.setCircleCenter();
-                  },
-                  onPanResponderRelease: () => {
-                    if (onPanResponderRelease) {
-                      onPanResponderRelease();
-                    }
-                  },
-                  onPanResponderMove: (evt, {moveX, moveY}) => {
-                    //if startAngle is 1 or less, then pan responder would not apply.
-                    //Pan responder won't apply for first index item also
+      {/* Start Icon */ }
+      this.state.startAngle.length > 1 && divider.push(
+        <Svg
+          style={{
+            position: 'absolute',
+            width: this.containerWidth,
+            height: this.containerWidth,
+          }}
+          key={'circle' + index}
+          ref={circle => (this._circle = circle)}
+          onLayout={this.onLayout}
+          pointerEvents={Platform.OS === 'ios' ? '' : 'box-none'}>
+          <G
+            transform={{
+              translate: `${(3 * strokeWidth) / 2 + radius}, ${(3 *
+                strokeWidth) /
+                2 +
+                radius}`,
+            }}>
+            <G
+              fill={'transparent'}
+              transform={{ translate: `${start.fromX}, ${start.fromY}` }}
+              {...PanResponder.create({
+                onMoveShouldSetPanResponder: (evt, gestureState) => true,
+                onMoveShouldSetPanResponderCapture: (evt, gestureState) =>
+                  true,
+                onPanResponderGrant: (evt, gestureState) => {
+                  if (onPanResponderGrant) {
+                    onPanResponderGrant();
+                  }
+                  this.setCircleCenter();
+                },
+                onPanResponderRelease: () => {
+                  if (onPanResponderRelease) {
+                    onPanResponderRelease();
+                  }
+                },
+                onPanResponderMove: (evt, { moveX, moveY }) => {
+                  //if startAngle is 1 or less, then pan responder would not apply.
+                  //Pan responder won't apply for first index item also
+                  if (
+                    this.state.startAngle.length <= 1 ||
+                    this.isPieChartComponentType
+                  ) {
+                    return;
+                  }
+                  const { circleCenterX, circleCenterY } = this.state;
+                  const currentAngleStop =
+                    (value + this.state.angleLength[index]) % (2 * Math.PI);
+                  let newAngle =
+                    Math.atan2(moveY - circleCenterY, moveX - circleCenterX) +
+                    Math.PI / 2;
+                  let newAngleLength = currentAngleStop - newAngle;
+                  if (newAngle < 0) {
+                    newAngle += 2 * Math.PI;
+                  }
+                  if (newAngleLength < 0) {
+                    newAngleLength += 2 * Math.PI;
+                  }
+                  let startAngle = [...this.state.startAngle],
+                    angleLength = [...this.state.angleLength],
+                    angleToUpdate = 0;
+                  const indexToUpdate =
+                    index === 0
+                      ? this.state.startAngle.length - 1
+                      : index - 1;
+                  if (newAngleLength >= angleLength[index]) {
+                    const length =
+                      (newAngleLength % (2 * Math.PI)) - angleLength[index];
+                    //Checking the updated angle, if it is less than minimum stop angle, we will not update it
                     if (
-                      this.state.startAngle.length <= 1 ||
-                      index === 0 ||
-                      this.isPieChartComponentType
+                      angleLength[indexToUpdate] - length <
+                      this.minimumStopAngleLength
                     ) {
                       return;
                     }
-                    const {circleCenterX, circleCenterY} = this.state;
-                    const currentAngleStop =
-                      (value + this.state.angleLength[index]) % (2 * Math.PI);
-                    let newAngle =
-                      Math.atan2(moveY - circleCenterY, moveX - circleCenterX) +
-                      Math.PI / 2;
-                    let newAngleLength = currentAngleStop - newAngle;
-                    if (newAngle < 0) {
-                      newAngle += 2 * Math.PI;
+                    angleToUpdate = angleLength[indexToUpdate] - length;
+                  } else {
+                    const length =
+                      angleLength[index] - (newAngleLength % (2 * Math.PI));
+                    //Checking the updated angle, if it is less than minimum stop angle, we will not update it
+                    if (
+                      newAngleLength % (2 * Math.PI) <
+                      this.minimumStopAngleLength
+                    ) {
+                      return;
                     }
-                    if (newAngleLength < 0) {
-                      newAngleLength += 2 * Math.PI;
-                    }
-                    let startAngle = [...this.state.startAngle],
-                      angleLength = [...this.state.angleLength],
-                      angleToUpdate = 0;
-                    const indexToUpdate =
-                      index === 0
-                        ? this.state.startAngle.length - 1
-                        : index - 1;
-                    if (newAngleLength >= angleLength[index]) {
-                      const length =
-                        (newAngleLength % (2 * Math.PI)) - angleLength[index];
-                      //Checking the updated angle, if it is less than minimum stop angle, we will not update it
-                      if (
-                        angleLength[indexToUpdate] - length <
-                        this.minimumStopAngleLength
-                      ) {
-                        return;
-                      }
-                      angleToUpdate = angleLength[indexToUpdate] - length;
-                    } else {
-                      const length =
-                        angleLength[index] - (newAngleLength % (2 * Math.PI));
-                      //Checking the updated angle, if it is less than minimum stop angle, we will not update it
-                      if (
-                        newAngleLength % (2 * Math.PI) <
-                        this.minimumStopAngleLength
-                      ) {
-                        return;
-                      }
-                      angleToUpdate = angleLength[indexToUpdate] + length;
-                    }
-                    this.props.values[indexToUpdate] =
-                      this.props.values[indexToUpdate] *
-                      (angleToUpdate / angleLength[indexToUpdate]);
-                    angleLength[indexToUpdate] = angleToUpdate;
-                    startAngle[index] = newAngle;
-                    angleToUpdate = newAngleLength % (2 * Math.PI);
-                    this.props.values[index] =
-                      this.props.values[index] *
-                      (angleToUpdate / angleLength[index]);
-                    angleLength[index] = angleToUpdate;
+                    angleToUpdate = angleLength[indexToUpdate] + length;
+                  }
+                  this.props.values[indexToUpdate] =
+                    this.props.values[indexToUpdate] *
+                    (angleToUpdate / angleLength[indexToUpdate]);
+                  angleLength[indexToUpdate] = angleToUpdate;
+                  startAngle[index] = newAngle;
+                  angleToUpdate = newAngleLength % (2 * Math.PI);
+                  this.props.values[index] =
+                    this.props.values[index] *
+                    (angleToUpdate / angleLength[index]);
+                  angleLength[index] = angleToUpdate;
 
-                    this.setState(
-                      {
-                        startAngle,
-                        angleLength,
-                      },
-                      () => {
-                        onUpdate(this.props.values);
-                      },
-                    );
-                  },
-                }).panHandlers}>
-                {index === 0
-                  ? //Hide the slide divider if the hideSlideDividerType is true or component type is pie_chart
-                    !(hideSlideDividerType || this.isPieChartComponentType) && (
-                      <Rect
-                        y={-(strokeWidth + 10) / 2}
-                        x={0}
-                        width={0}
-                        rotation={
-                          180 *
-                          ((this.state.startAngle[index] % Math.PI) / Math.PI)
-                        }
-                        height={strokeWidth + 10}
-                        stroke={separatorColor}
-                        strokeWidth={DIVIDER_BAR_WIDTH_INDEX1}
-                        fill={separatorColor}
-                      />
-                    )
-                  : !(hideSlideDividerType || this.isPieChartComponentType) &&
-                    this.renderSlideDivider(index)}
-                {//Hide the divider dotted lines if the strokeWidth is greater than radius
+                  this.setState(
+                    {
+                      startAngle,
+                      angleLength,
+                    },
+                    () => {
+                      onUpdate(this.props.values);
+                    },
+                  );
+                },
+              }).panHandlers}>
+              {!(hideSlideDividerType || this.isPieChartComponentType) &&
+                this.renderSlideDivider(index)}
+              {//Hide the divider dotted lines if the strokeWidth is greater than radius
                 strokeWidth <= radius && (
                   <Line
                     stroke="grey"
@@ -657,17 +669,16 @@ export default class CircularMultipleSlider extends PureComponent {
                     y2={value >= Math.PI ? -radius : radius}
                   />
                 )}
-              </G>
-            )}
+            </G>
           </G>
-        </Svg>,
-      );
+        </Svg>
+      )
     });
-    return slider;
+    return divider;
   }
 
   renderBorderCircle() {
-    const {strokeWidth, borderWidth, radius, borderColor} = this.props;
+    const { strokeWidth, borderWidth, radius, borderColor } = this.props;
     return (
       <Svg
         style={{
@@ -711,6 +722,7 @@ export default class CircularMultipleSlider extends PureComponent {
         }}>
         {this.props.borderColor.length > 0 && this.renderBorderCircle()}
         {this.renderSlider()}
+        {this.renderDivider()}
       </View>
     );
   }
