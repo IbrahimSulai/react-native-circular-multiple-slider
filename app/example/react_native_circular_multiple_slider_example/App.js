@@ -9,8 +9,8 @@
  */
 
 import React from 'react';
-import {View, StyleSheet, Text, Image} from 'react-native';
-import CircularMultipleSlider from 'react_native_circular_multiple_slider';
+import { View, StyleSheet, Text, Image } from 'react-native';
+import CircularMultipleSlider from 'react-native-circular-multiple-slider';
 
 const DIVIDER_COMPONENT_SIZE = 40;
 const PERCENTAGE_TEXT = '%';
@@ -60,7 +60,7 @@ export default class Sample extends React.Component {
 
   renderSliderWithCircleDivider() {
     return (
-      <View style={{height: 500, width: '100%'}}>
+      <View style={{ height: 500, width: '100%' }}>
         <Text style={styles.title}>
           {'Multiple Circular Slider  \nCircle Divider'}
         </Text>
@@ -90,7 +90,7 @@ export default class Sample extends React.Component {
 
   renderSliderWithSquareDivider() {
     return (
-      <View style={{height: 500, width: '100%'}}>
+      <View style={{ height: 500, width: '100%' }}>
         <Text style={styles.title}>
           {'Multiple Circular Slider \nwith \nSquare Divider'}
         </Text>
@@ -120,7 +120,7 @@ export default class Sample extends React.Component {
 
   renderSliderWithBarDivider() {
     return (
-      <View style={{height: 500, width: '100%'}}>
+      <View style={{ height: 500, width: '100%' }}>
         <Text style={styles.title}>
           {'Multiple Circular Slider \nwith \nBar Divider'}
         </Text>
@@ -150,7 +150,7 @@ export default class Sample extends React.Component {
 
   renderSliderWithIconDivider() {
     return (
-      <View style={{height: 500, width: '100%'}}>
+      <View style={{ height: 500, width: '100%' }}>
         <Text style={styles.title}>
           {'Multiple Circular Slider \nwith \nDivider Icon'}
         </Text>
@@ -181,7 +181,7 @@ export default class Sample extends React.Component {
 
   renderSliderWithTextDividerComponent() {
     return (
-      <View style={{height: 500, width: '100%'}}>
+      <View style={{ height: 500, width: '100%' }}>
         <Text style={styles.title}>
           {'Multiple Circular Slider \nwith \nText Divider Component'}
         </Text>
@@ -220,7 +220,7 @@ export default class Sample extends React.Component {
 
   renderSliderWithoutDivider() {
     return (
-      <View style={{height: 500, width: '100%'}}>
+      <View style={{ height: 500, width: '100%' }}>
         <Text style={styles.title}>
           {'Multiple Circular Slider \nwithout Divider'}
         </Text>
@@ -259,7 +259,7 @@ export default class Sample extends React.Component {
 
   renderPieChartWithTextDividerComponent() {
     return (
-      <View style={{height: 500, width: 640}}>
+      <View style={{ height: 500, width: 640 }}>
         <Text style={styles.title}>
           {'Circular Pie-Chart \nwith \nText Divider Component'}
         </Text>
@@ -298,7 +298,7 @@ export default class Sample extends React.Component {
 
   renderPieChartWithIconDividerComponent() {
     return (
-      <View style={{height: 500, width: 640}}>
+      <View style={{ height: 500, width: 640 }}>
         <Text style={styles.title}>
           {'Circular Pie-Chart \nwith \nDivider Icon Component'}
         </Text>
@@ -331,34 +331,34 @@ export default class Sample extends React.Component {
     return (
       <View>
         <View style={styles.rowStyle}>
-          <Text style={[styles.description, {color: '#2D87BB'}]}>
+          <Text style={[styles.description, { color: '#2D87BB' }]}>
             {'React - '}
           </Text>
-          <Text style={[styles.value, {color: '#2D87BB'}]}>
+          <Text style={[styles.value, { color: '#2D87BB' }]}>
             {Math.round(this.state.value[0]) + PERCENTAGE_TEXT}
           </Text>
         </View>
         <View style={styles.rowStyle}>
-          <Text style={[styles.description, {color: '#EC6B56'}]}>
+          <Text style={[styles.description, { color: '#EC6B56' }]}>
             {'Angular - '}
           </Text>
-          <Text style={[styles.value, {color: '#EC6B56'}]}>
+          <Text style={[styles.value, { color: '#EC6B56' }]}>
             {Math.round(this.state.value[1]) + PERCENTAGE_TEXT}
           </Text>
         </View>
         <View style={styles.rowStyle}>
-          <Text style={[styles.description, {color: '#FFC154'}]}>
+          <Text style={[styles.description, { color: '#FFC154' }]}>
             {'Swift - '}
           </Text>
-          <Text style={[styles.value, {color: '#FFC154'}]}>
+          <Text style={[styles.value, { color: '#FFC154' }]}>
             {Math.round(this.state.value[2]) + PERCENTAGE_TEXT}
           </Text>
         </View>
         <View style={styles.rowStyle}>
-          <Text style={[styles.description, {color: '#47B39C'}]}>
+          <Text style={[styles.description, { color: '#47B39C' }]}>
             {'Android - '}
           </Text>
-          <Text style={[styles.value, {color: '#47B39C'}]}>
+          <Text style={[styles.value, { color: '#47B39C' }]}>
             {Math.round(this.state.value[3]) + PERCENTAGE_TEXT}
           </Text>
         </View>

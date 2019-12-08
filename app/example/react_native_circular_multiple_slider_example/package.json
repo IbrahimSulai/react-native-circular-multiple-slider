@@ -12,8 +12,8 @@
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.4",
-    "react-native-svg": "^9.7.1",
-    "react_native_circular_multiple_slider": "^1.0.0"
+    "react-native-circular-multiple-slider": "^1.0.9",
+    "react-native-svg": "9.7.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",

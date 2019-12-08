@@ -35,7 +35,7 @@ It's an example with this package
 
 1. Install library and react-native-svg
 
-   `npm i --save react-native-circular-slider react-native-svg@9.7.1`
+   `npm i --save react-native-circular-multiple-slider react-native-svg@9.7.1`
 
 2. Link native code for SVG
 
