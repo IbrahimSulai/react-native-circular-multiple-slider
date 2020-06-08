@@ -1,6 +1,6 @@
 {
   "name": "react-native-circular-multiple-slider",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "React Native component for circular multiple slider and pie chart",
   "main": "app/src/CircularMultipleSlider.js",
   "homepage": "https://github.com/IbrahimSulai/react-native-circular-multiple-slider.git",
