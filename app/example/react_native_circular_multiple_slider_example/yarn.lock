@@ -2959,9 +2959,9 @@ hermes-engine@^0.2.1:
   integrity sha512-eNHUQHuadDMJARpaqvlCZoK/Nitpj6oywq3vQ3wCwEsww5morX34mW5PmKWQTO7aU0ck0hgulxR+EVDlXygGxQ==
 
 hosted-git-info@^2.1.4:
-  version "2.8.5"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.5.tgz#759cfcf2c4d156ade59b0b2dfabddc42a6b9c70c"
-  integrity sha512-kssjab8CvdXfcXMXVcvsXum4Hwdq9XGtRD3TteMEvEbq0LXyiNQr6AprqKqfeaDXze7SxWvRxdpwE6ku7ikLkg==
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
+  integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
 html-encoding-sniffer@^1.0.2:
   version "1.0.2"
@@ -3999,6 +3999,11 @@ locate-path@^5.0.0:
   integrity sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==
   dependencies:
     p-locate "^4.1.0"
+
+lodash.range@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.range/-/lodash.range-3.2.0.tgz#f461e588f66683f7eadeade513e38a69a565a15d"
+  integrity sha1-9GHliPZmg/fq3q3lE+OKaaVloV0=
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
@@ -5219,6 +5224,19 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
+
+react-native-circular-multiple-slider@^1.0.9:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-circular-multiple-slider/-/react-native-circular-multiple-slider-1.1.2.tgz#122cc7100a9ec9313d321b573904502e13b8fead"
+  integrity sha512-PMp6uHfKzQt1nGPKmb8NjIcZK6sSG+MBKX+jztC0QUXoh3QKKpSOsF6CGEwKhdOUDzXcT8VruUXWIlxfZQVkzQ==
+  dependencies:
+    lodash.range "^3.2.0"
+    react-native-svg "9.7.1"
+
+react-native-svg@9.7.1:
+  version "9.7.1"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-9.7.1.tgz#a6d270cd51f8f238de7623338211debf4ff9cf5c"
+  integrity sha512-Yr54SyLPCdovLCJ08V7syJUe1iKrTYG9V5wB08z6lh/9FdC2R9CtBnMyz83GDLKfzUONqqH9nN1l+o61CgD3tg==
 
 react-native@0.61.4:
   version "0.61.4"
